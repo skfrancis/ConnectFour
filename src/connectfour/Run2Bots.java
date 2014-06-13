@@ -22,9 +22,9 @@ public class Run2Bots {
 		turnCount = 1;
 
 		for(int i = 1; i <= 1000; i++){
-			while(board.isFull() != true
-				 && board.isWinner(one.getID()) == false
-				 && board.isWinner(two.getID()) == false){
+			while(!board.isFull()
+				 && !board.isWinner(one.getID())
+				 && !board.isWinner(two.getID())){
 				if(turnCount % 2 != 0){
 					one.makeMove(board, 0);
 					turnCount++;
@@ -34,7 +34,7 @@ public class Run2Bots {
 					turnCount++;
 				}
 			}
-			if (board.isFull() == true){
+			if (board.isFull()){
 				ties++;
 			}
 			else if(board.isWinner(one.getID())){
@@ -61,9 +61,9 @@ public class Run2Bots {
 				one.setStrategy(new IntermediateStrategy());
 				two.setStrategy(new BeginnerStrategy());
 			}
-			while(board.isFull() != true
-				 && board.isWinner(one.getID()) == false
-				 && board.isWinner(two.getID()) == false){
+			while(!board.isFull()
+				 && !board.isWinner(one.getID())
+				 && !board.isWinner(two.getID())){
 				if(turnCount % 2 != 0){
 					one.makeMove(board, 0);
 					turnCount++;
@@ -73,7 +73,7 @@ public class Run2Bots {
 					turnCount++;
 				}
 			}
-			if (board.isFull() == true){
+			if (board.isFull()){
 				ties++;
 			}
 			else if(board.isWinner(one.getID())){
@@ -97,9 +97,9 @@ public class Run2Bots {
 
 		for(int i = 1; i <= 1000; i++){
 
-			while(board.isFull() != true
-				 && board.isWinner(one.getID()) == false
-				 && board.isWinner(two.getID()) == false){
+			while(!board.isFull()
+				 && !board.isWinner(one.getID())
+				 && !board.isWinner(two.getID())){
 				if(turnCount % 2 != 0){
 					one.makeMove(board, 0);
 					turnCount++;
@@ -109,7 +109,7 @@ public class Run2Bots {
 					turnCount++;
 				}
 			}
-			if (board.isFull() == true){
+			if (board.isFull()){
 				ties++;
 			}
 			else if(board.isWinner(one.getID())){
@@ -133,9 +133,9 @@ public class Run2Bots {
 
 		for(int i = 1; i <= 1000; i++){
 
-			while(board.isFull() != true
-				 && board.isWinner(one.getID()) == false
-				 && board.isWinner(two.getID()) == false){
+			while(!board.isFull()
+				 && !board.isWinner(one.getID())
+				 && !board.isWinner(two.getID())){
 				if(turnCount % 2 != 0){
 					one.makeMove(board, 0);
 					turnCount++;
@@ -145,7 +145,7 @@ public class Run2Bots {
 					turnCount++;
 				}
 			}
-			if (board.isFull() == true){
+			if (board.isFull()){
 				ties++;
 			}
 			else if(board.isWinner(one.getID())){
@@ -169,9 +169,9 @@ public class Run2Bots {
 
 		for(int i = 1; i <= 1000; i++){
 
-			while(board.isFull() != true
-				 && board.isWinner(one.getID()) == false
-				 && board.isWinner(two.getID()) == false){
+			while(!board.isFull()
+				 && !board.isWinner(one.getID())
+				 && !board.isWinner(two.getID())){
 				if(turnCount % 2 != 0){
 					one.makeMove(board, 0);
 					turnCount++;
@@ -181,7 +181,7 @@ public class Run2Bots {
 					turnCount++;
 				}
 			}
-			if (board.isFull() == true){
+			if (board.isFull()){
 				ties++;
 			}
 			else if(board.isWinner(one.getID())){

@@ -51,12 +51,7 @@ public class GameBoard {
 	 * @return true if there is an open move false otherwise
 	 */
 	public boolean isLegalPlay(int column){
-		if(column >= 0 && column < COLUMNS && boardLocations[0][column] == EMPTY){
-			return true;
-		}
-		else{
-			return false;
-		}
+        return column >= 0 && column < COLUMNS && boardLocations[0][column] == EMPTY;
 	}
 
 	/**

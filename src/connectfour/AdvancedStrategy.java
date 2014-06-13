@@ -664,7 +664,7 @@ public class AdvancedStrategy implements ComputerStrategy{
 					}
 				}
 			}
-			//topleft to lowright middle
+			//top left to low right middle
 			if(result == 8){
 				for( int i = 1; i < 5; i++){
 					for( int j = 1; j < 6; j++){
@@ -687,7 +687,7 @@ public class AdvancedStrategy implements ComputerStrategy{
 					}
 				}
 			}
-			//topright to lowleft middle
+			//top right to low left middle
 			if(result == 8){
 				for( int i = 1; i < 5; i++){
 					for( int j = 1; j < 5; j++){
@@ -840,7 +840,7 @@ public class AdvancedStrategy implements ComputerStrategy{
 				}
 			}
 
-			//horizonatal right
+			//horizontal right
 			if(result == 8){
 				for( int i = 0; i < 6; i++){
 					for( int j = 1; j < 7; j++){
@@ -943,7 +943,7 @@ public class AdvancedStrategy implements ComputerStrategy{
 				}
 			}
 
-			//horizonatal right
+			//horizontal right
 			if(result == 8){
 				for( int i = 0; i < 6; i++){
 					for( int j = 1; j < 7; j++){
@@ -1022,8 +1022,8 @@ public class AdvancedStrategy implements ComputerStrategy{
 			//generates random column
 			////////////////////////////////////////////////////
 
-			if(result == 8 || board.isLegalPlay(result) == false){
-				while(board.isLegalPlay(result) == false){
+			if(result == 8 || !board.isLegalPlay(result)){
+				while(!board.isLegalPlay(result)){
 					double val = Math.random() * 100;
 					if(val >= 0 && val < 14){
 						result = 0;

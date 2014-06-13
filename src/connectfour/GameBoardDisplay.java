@@ -74,11 +74,11 @@ public class GameBoardDisplay extends JPanel implements MouseListener, ActionLis
 			currentPlayer.makeMove(board, 0);
 		}
 		else{
-			if(columnClicked == false){
+			if(!columnClicked){
 				return;
 			}
 			else{
-				if (currentPlayer.makeMove(board, lastClickedColumn) == true){
+				if (currentPlayer.makeMove(board, lastClickedColumn)){
 					columnClicked = false;
 				}
 				else{

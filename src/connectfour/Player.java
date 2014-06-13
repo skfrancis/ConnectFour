@@ -26,26 +26,21 @@ public class Player {
 	}
 
 	/**
-	 * This method returns the stored
-	 * player name.
-	 * @return
+	 * This method returns the stored player name.
 	 */
 	public String getName(){
 		return playerName;
 	}
 
 	/**
-	 * This method returns the stored
-	 * player id.
-	 * @return
+	 * This method returns the stored player id.
 	 */
 	public int getID(){
 		return playerID;
 	}
 
 	public void setStrategy(ComputerStrategy newStrategy){
-		return;
-	}
+    }
 
 	/**
 	 * This method returns whether or not

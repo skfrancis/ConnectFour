@@ -9,8 +9,8 @@ public interface ViewDisplay {
 	 * This method is used to implement how the display
 	 * will be rendered based on its implementation.
 	 * @param panel
-	 * @param g
+	 * @param graphics
 	 * @param board
 	 */
-	public void paintDisplay(JPanel panel, Graphics g, GameBoard board);
+	public void paintDisplay(JPanel panel, Graphics graphics, GameBoard board);
 }

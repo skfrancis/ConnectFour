@@ -20,9 +20,9 @@ public class BeginnerStrategy implements ComputerStrategy {
 	public int decideMove(GameBoard board, int playerID) {
 
 		tryColumn = (turns % 7);
-		while(board.isLegalPlay(tryColumn) == false){
+		while(!board.isLegalPlay(tryColumn)){
 			tryColumn++;
-			tryColumn = tryColumn %7;
+			tryColumn = tryColumn % 7;
 		}
 		turns++;
 		return tryColumn;

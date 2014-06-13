@@ -4,12 +4,7 @@ package connectfour;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JRadioButtonMenuItem;
+import javax.swing.*;
 
 /**
  * This class runs the full gui for the connect four game
@@ -50,7 +45,7 @@ public class RunConnectFour extends JFrame {
 	 */
 	public RunConnectFour (){
 		setTitle("Connect Four");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		display = new GameBoardDisplay();
 		setSize(700,600);
 		setLocation(150, 100);

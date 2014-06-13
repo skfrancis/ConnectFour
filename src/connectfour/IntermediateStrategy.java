@@ -395,8 +395,8 @@ public class IntermediateStrategy implements ComputerStrategy {
 		//generates random column
 		////////////////////////////////////////////////////
 
-		if(result == 8 || board.isLegalPlay(result) == false){
-			while(board.isLegalPlay(result) == false){
+		if(result == 8 || !board.isLegalPlay(result)){
+			while(!board.isLegalPlay(result)){
 				double val = Math.random() * 100;
 				if(val >= 0 && val < 14){
 					result = 0;

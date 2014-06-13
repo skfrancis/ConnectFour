@@ -25,14 +25,14 @@ public class HumanVComputer {
 		int turnCount = 1;
 		int columnMove;
 
-		while(board.isFull() != true
-				 && board.isWinner(one.getID()) == false
-				 && board.isWinner(two.getID()) == false){
+		while(!board.isFull()
+				 && !board.isWinner(one.getID())
+				 && !board.isWinner(two.getID())){
 			if(turnCount % 2 != 0){
 				System.out.println(board.toString());
 				System.out.print("Enter Column to drop Checker (0-6): ");
 				columnMove = keyBoard.nextInt();
-				if (one.makeMove(board, columnMove) == true){
+				if (one.makeMove(board, columnMove)){
 					turnCount++;
 				}
 				else{
@@ -48,7 +48,7 @@ public class HumanVComputer {
 
 		}
 		System.out.println(board.toString());
-		if (board.isFull() == true){
+		if (board.isFull()){
 			System.out.println("Game was a tie!");
 		}
 		else if(board.isWinner(one.getID())){

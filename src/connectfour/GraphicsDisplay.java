@@ -20,28 +20,29 @@ public class GraphicsDisplay implements ViewDisplay {
 	public static final int ROWS = 6;
 	public static final int COLUMNS = 7;
 	public static final int SHIFT = 5;
-	private ArrayList<Color> gameColors;
+    private ArrayList<Color> gameColors;
 
 	public GraphicsDisplay(){
         gameColors = new ArrayList<Color>();
-		gameColors.add(Color.BLACK);
+		gameColors.add(Color.GRAY);
 		gameColors.add(Color.RED);
 		gameColors.add(Color.BLUE);
 	}
 
 	@Override
-	public void paintDisplay(JPanel panel, Graphics g, GameBoard board) {
-		Graphics2D pen = (Graphics2D)g;
+	public void paintDisplay(JPanel panel, Graphics graphics, GameBoard board) {
+		Graphics2D pen = (Graphics2D) graphics;
 		int width = panel.getSize().width / COLUMNS;
 		int height = panel.getSize().height / ROWS;
 		int color;
+        panel.setBackground(new Color(204,204,0));
 
 		for(int row = 0; row < ROWS; row++){
 			for(int column = 0; column < COLUMNS; column++){
 				pen.setPaint(Color.YELLOW);
-				pen.fill(new Rectangle(column * width, row * height, width, height));
+				pen.fill(new Rectangle((column * width) + SHIFT, (row * height) + SHIFT, width - SHIFT, height - SHIFT));
 				color = board.get(row, column);
-				pen.setPaint((Color)gameColors.get(color));
+				pen.setPaint(gameColors.get(color));
 				pen.fill(new Ellipse2D.Double((column * width) + SHIFT, (row * height)+ SHIFT,
 						 width - SHIFT, height - SHIFT));
 			}
