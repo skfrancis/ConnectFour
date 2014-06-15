@@ -17,10 +17,11 @@ import javax.swing.JPanel;
  */
 public class GraphicsDisplay implements ViewDisplay {
 
-	public static final int ROWS = 6;
-	public static final int COLUMNS = 7;
-	public static final int SHIFT = 5;
-    private ArrayList<Color> gameColors;
+	private static final int ROWS = 6;
+	private static final int COLUMNS = 7;
+	private static final int SHIFT = 5;
+    private static final Color BACKGROUND = new Color(204,204,0);
+    private final ArrayList<Color> gameColors;
 
 	public GraphicsDisplay(){
         gameColors = new ArrayList<Color>();
@@ -35,7 +36,7 @@ public class GraphicsDisplay implements ViewDisplay {
 		int width = panel.getSize().width / COLUMNS;
 		int height = panel.getSize().height / ROWS;
 		int color;
-        panel.setBackground(new Color(204,204,0));
+        panel.setBackground(BACKGROUND);
 
 		for(int row = 0; row < ROWS; row++){
 			for(int column = 0; column < COLUMNS; column++){

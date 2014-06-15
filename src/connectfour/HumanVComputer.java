@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class HumanVComputer {
 
 	/**
-	 * @param args
+	 * @param args not used
 	 */
 	public static void main(String[] args) {
 		GameBoard board = new GameBoard();

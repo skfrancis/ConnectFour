@@ -8,33 +8,25 @@ package connectfour;
  *
  */
 public class ComputerPlayer extends Player {
-	ComputerStrategy currentStrategy;
+	private ComputerStrategy currentStrategy;
 
 	/**
 	 * This constructor creates a new computer
 	 * player with the passed name, its passed player
 	 * id and its chosen strategy.
-	 * @param name
-	 * @param id
-	 * @param strategy
+	 * @param name player name
+	 * @param id player identification
+	 * @param strategy computer strategy
 	 */
 	public ComputerPlayer(String name, int id, ComputerStrategy strategy) {
-		super(name, id);
-		currentStrategy = strategy;
-
-	/**
-	 * This method returns the current stored
-	 * computer strategy.
-	 */
-	}
-	public ComputerStrategy getStrategy(){
-		return currentStrategy;
-	}
+        super(name, id);
+        currentStrategy = strategy;
+    }
 
 	/**
 	 * This method changes the current stored
 	 * computer strategy to the passed strategy.
-	 * @param newStrategy
+	 * @param newStrategy computer strategy
 	 */
 	public void setStrategy(ComputerStrategy newStrategy){
 		currentStrategy = newStrategy;

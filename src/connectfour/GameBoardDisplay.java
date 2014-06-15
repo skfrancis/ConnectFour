@@ -17,18 +17,18 @@ import javax.swing.Timer;
  *
  */
 @SuppressWarnings("serial")
-public class GameBoardDisplay extends JPanel implements MouseListener, ActionListener {
+class GameBoardDisplay extends JPanel implements MouseListener, ActionListener {
 
 	private static final int TIMER = 500;
 	private static final int COLUMNS = 7;
 
-	private GameBoard board;
+	private final GameBoard board;
 	private Player playerOne;
 	private Player playerTwo;
 	private Player currentPlayer;
 	private ViewDisplay currentView;
 	private int lastClickedColumn;
-	private Timer gameClock;
+	private final Timer gameClock;
 	private boolean columnClicked;
 
 	/**
@@ -107,8 +107,8 @@ public class GameBoardDisplay extends JPanel implements MouseListener, ActionLis
 	/**
 	 * This method creates a new game based on the
 	 * passed players to the method.
-	 * @param one
-	 * @param two
+	 * @param one player identification
+	 * @param two player identification
 	 */
 	public void newGame(Player one, Player two){
 		playerOne = one;
@@ -121,7 +121,7 @@ public class GameBoardDisplay extends JPanel implements MouseListener, ActionLis
 	/**
 	 * This method is used to switch between
 	 * displays.
-	 * @param newDisplay
+	 * @param newDisplay graphical display of game board
 	 */
 	public void setDisplay(ViewDisplay newDisplay){
 		currentView = newDisplay;

@@ -16,26 +16,25 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class RunConnectFour extends JFrame {
 
-	private GameBoardDisplay display;
-	private JMenuItem newGame;
-	private JRadioButtonMenuItem graphical;
-	private JRadioButtonMenuItem textual;
-	private JRadioButtonMenuItem playerOneHuman;
-	private JRadioButtonMenuItem playerOneComputer;
-	private JRadioButtonMenuItem playerTwoHuman;
-	private JRadioButtonMenuItem playerTwoComputer;
-	private JRadioButtonMenuItem beginnerOne;
-	private JRadioButtonMenuItem intermediateOne;
-	private JRadioButtonMenuItem advancedOne;
-	private JRadioButtonMenuItem beginnerTwo;
-	private JRadioButtonMenuItem intermediateTwo;
-	private JRadioButtonMenuItem advancedTwo;
-	private JMenuBar menu;
-	private JMenu difficultyMenu;
-	private Player playerOne;
-	private Player playerTwo;
-	private ComputerStrategy computerOne;
-	private ComputerStrategy computerTwo;
+    private final GameBoardDisplay display;
+    private JMenuItem newGame;
+    private JRadioButtonMenuItem graphical;
+    private JRadioButtonMenuItem textual;
+    private JRadioButtonMenuItem playerOneHuman;
+    private JRadioButtonMenuItem playerOneComputer;
+    private JRadioButtonMenuItem playerTwoHuman;
+    private JRadioButtonMenuItem playerTwoComputer;
+    private JRadioButtonMenuItem beginnerOne;
+    private JRadioButtonMenuItem intermediateOne;
+    private JRadioButtonMenuItem advancedOne;
+    private JRadioButtonMenuItem beginnerTwo;
+    private JRadioButtonMenuItem intermediateTwo;
+    private JRadioButtonMenuItem advancedTwo;
+    private final JMenuBar menu;
+    private Player playerOne;
+    private Player playerTwo;
+    private ComputerStrategy computerOne;
+    private ComputerStrategy computerTwo;
 
 	/**
 	 * This constructor creates the gui for the connect four game
@@ -43,7 +42,7 @@ public class RunConnectFour extends JFrame {
 	 * being a computer player.  The computer strategies for computer
 	 * players one and two is set at beginner.
 	 */
-	public RunConnectFour (){
+    private RunConnectFour(){
 		setTitle("Connect Four");
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		display = new GameBoardDisplay();
@@ -65,7 +64,7 @@ public class RunConnectFour extends JFrame {
 	}
 
 	/**
-	 * @param args
+	 * @param args not used
 	 */
 	public static void main(String[] args) {
 		RunConnectFour window = new RunConnectFour();
@@ -132,7 +131,7 @@ public class RunConnectFour extends JFrame {
 	 * This private method initializes the strategy menu.
 	 */
 	private void difficultyMenuInit(){
-		difficultyMenu = new JMenu("Strategy");
+        JMenu difficultyMenu = new JMenu("Strategy");
 		JLabel one = new JLabel("Player One");
 		JLabel two = new JLabel("Player Two");
 		menu.add(difficultyMenu);

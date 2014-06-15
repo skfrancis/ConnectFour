@@ -7,14 +7,14 @@ package connectfour;
  * @author Shawn Francis
  *
  */
-public class GameBoard {
+class GameBoard {
 
-	public static final int EMPTY = 0;
-	public static final int ROWS = 6;
-	public static final int COLUMNS = 7;
-	public static final int WIN = 4;
+	private static final int EMPTY = 0;
+	private static final int ROWS = 6;
+	private static final int COLUMNS = 7;
+	private static final int WIN = 4;
 
-	private int [][] boardLocations;
+	private final int [][] boardLocations;
 
 	/**
 	 * The constructor creates a game board initialized
@@ -31,8 +31,8 @@ public class GameBoard {
 	 * checked prior to dropping the checker.  It is
 	 * also assumed the column selected is a valid
 	 * column.
-	 * @param column
-	 * @param playerID
+	 * @param column board column
+	 * @param playerID player identification
 	 */
 	public void dropChecker(int column, int playerID){
 		for(int row = (ROWS - 1); row >= 0; row--){
@@ -47,8 +47,8 @@ public class GameBoard {
 	 * This method checks the selected column is valid and checks
 	 * to see if there is an open move available within that column
 	 *
-	 * @param column
-	 * @return true if there is an open move false otherwise
+	 * @param column board column
+	 * @return true if there is an open move; false otherwise
 	 */
 	public boolean isLegalPlay(int column){
         return column >= 0 && column < COLUMNS && boardLocations[0][column] == EMPTY;
@@ -57,8 +57,8 @@ public class GameBoard {
 	/**
 	 * This method checks to see if the last person
 	 * to make a play is a winner or not.
-	 * @param id
-	 * @return
+	 * @param id player identification
+	 * @return true if there is a winner; false otherwise
 	 */
 	public boolean isWinner(int id){
 		return checkWinVertical(id)
@@ -71,7 +71,7 @@ public class GameBoard {
 	/**
 	 * This method checks the board to see if
 	 * all spaces have been filled or not.
-	 * @return
+     * @return return true if board is full; false otherwise
 	 */
 	public boolean isFull(){
 		boolean fullBoard = true;
@@ -100,9 +100,9 @@ public class GameBoard {
 	/**
 	 * This method gets the value of the specified row
 	 * and column passed into the method.
-	 * @param row
-	 * @param column
-	 * @return
+	 * @param row board row
+     * @param column board column
+     * @return returns value of passed in board location
 	 */
 	public int get(int row, int column){
 		return boardLocations[row][column];
@@ -128,8 +128,8 @@ public class GameBoard {
 	/**
 	 * This method checks the game board to
 	 * see if there is a winner vertically.
-	 * @param id
-	 * @return
+	 * @param id player identification
+	 * @return true if there is a winner; false otherwise
 	 */
 	private boolean checkWinVertical(int id){
 		int winCount;
@@ -153,8 +153,8 @@ public class GameBoard {
 	/**
 	 * This method checks the game board to
 	 * see if there is a winner horizontally.
-	 * @param id
-	 * @return
+	 * @param id player identification
+	 * @return true if there is a winner; false otherwise
 	 */
 	private boolean checkWinHorizontal(int id){
 		int winCount;
@@ -178,8 +178,8 @@ public class GameBoard {
 	/**
 	 * This method checks the game board to
 	 * see if there is a winner diagonally.
-	 * @param id
-	 * @return
+	 * @param id player identification
+	 * @return true if there is a winner; false otherwise
 	 */
 	private boolean checkWinDiagonal(int id){
 		int winCount;
@@ -231,8 +231,8 @@ public class GameBoard {
 	 * This method checks the game board to
 	 * see if there is a winner diagonally
 	 * in reverse.
-	 * @param id
-	 * @return
+	 * @param id player identification
+	 * @return true if there is a winner; false otherwise
 	 */
 	private boolean checkWinDiagonalReverse(int id){
 		int winCount;

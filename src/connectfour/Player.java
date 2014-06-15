@@ -6,18 +6,18 @@ package connectfour;
  * @author Shawn Francis
  *
  */
-public class Player {
+class Player {
 
-	private String playerName;
-	private int playerID;
+	private final String playerName;
+	private final int playerID;
 
 
 	/**
 	 * This constructor creates a new player
 	 * with its passed name and passed player
 	 * id.
-	 * @param name
-	 * @param id
+	 * @param name player name
+	 * @param id computer strategy
 	 */
 	public Player(String name, int id){
 		playerName = name;
@@ -48,9 +48,9 @@ public class Player {
 	 * is a valid move or not. If it is a valid
 	 * move it plays the checker if not it returns
 	 * false that the move was invalid.
-	 * @param board
-	 * @param column
-	 * @return
+	 * @param board game board
+	 * @param column board column
+	 * @return returns true if move was valid and completed; otherwise false
 	 */
 	public boolean makeMove(GameBoard board, int column){
 		if(board.isLegalPlay(column)){

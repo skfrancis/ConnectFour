@@ -16,9 +16,9 @@ import javax.swing.JPanel;
  */
 public class TextDisplay implements ViewDisplay {
 
-	public static final int ROWS = 6;
-	public static final int COLUMNS = 7;
-	private ArrayList<Color> gameColors;
+	private static final int ROWS = 6;
+	private static final int COLUMNS = 7;
+	private final ArrayList<Color> gameColors;
 
 	public TextDisplay(){
         gameColors = new ArrayList<Color>();

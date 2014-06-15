@@ -12,14 +12,14 @@ package connectfour;
  */
 public class BeginnerStrategy implements ComputerStrategy {
 
-	int  turns, tryColumn;
+	private int turns;
 
-	public BeginnerStrategy(){
+    public BeginnerStrategy(){
 		turns = 0;
 	}
 	public int decideMove(GameBoard board, int playerID) {
 
-		tryColumn = (turns % 7);
+        int tryColumn = (turns % 7);
 		while(!board.isLegalPlay(tryColumn)){
 			tryColumn++;
 			tryColumn = tryColumn % 7;
