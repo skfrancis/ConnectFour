@@ -1,9 +1,8 @@
 package connectfour;
 
-
+import strategies.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
 /**
@@ -57,7 +56,7 @@ public class RunConnectFour extends JFrame {
 		difficultyMenuInit();
 		computerOne = new BeginnerStrategy();
 		computerTwo = new BeginnerStrategy();
-		playerOne = new Player("Human Red",1);
+		playerOne = new HumanPlayer("Human Red",1);
 		playerTwo = new ComputerPlayer("Computer Blue",2, computerTwo);
 		display.newGame(playerOne, playerTwo);
 		display.startGame();
@@ -203,7 +202,7 @@ public class RunConnectFour extends JFrame {
 		public void actionPerformed(ActionEvent event) {
 			Object eventSource = event.getSource();
 			if(eventSource == playerOneHuman){
-				playerOne = new Player("Human Red",1);
+				playerOne = new HumanPlayer("Human Red",1);
 				playerOneHuman.setSelected(true);
 				playerOneComputer.setSelected(false);
 				display.stopGame();
@@ -221,7 +220,7 @@ public class RunConnectFour extends JFrame {
 
 			}
 			if(eventSource == playerTwoHuman){
-				playerTwo = new Player("Human Blue",2);
+				playerTwo = new HumanPlayer("Human Blue",2);
 				playerTwoHuman.setSelected(true);
 				playerTwoComputer.setSelected(false);
 				display.stopGame();

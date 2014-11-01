@@ -1,4 +1,6 @@
-package connectfour;
+package strategies;
+
+import connectfour.GameBoard;
 
 /**
  * This method implements the ComputerStrategy interface

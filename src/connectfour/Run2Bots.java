@@ -1,5 +1,9 @@
 package connectfour;
 
+import strategies.AdvancedStrategy;
+import strategies.BeginnerStrategy;
+import strategies.IntermediateStrategy;
+
 /**
  * This class tests the playability of two
  * computers against each other with different
@@ -47,7 +51,7 @@ public class Run2Bots {
 		}
 		System.out.println(one.getName() + " won " + botOneWin + " games.");
 		System.out.println(two.getName() + " won " + botTwoWin + " games.");
-		System.out.println("There was "+ ties + " tie games.");
+		System.out.println("There was "+ ties + " tie game(s).");
 		System.out.println();
 
 		one.setStrategy(new BeginnerStrategy());
@@ -86,7 +90,7 @@ public class Run2Bots {
 		}
 		System.out.println(one.getName() + " won " + botOneWin + " games.");
 		System.out.println(two.getName() + " won " + botTwoWin + " games.");
-		System.out.println("There was "+ ties + " tie games.");
+		System.out.println("There was "+ ties + " tie game(s).");
 		System.out.println();
 
 		one.setStrategy(new BeginnerStrategy());
@@ -122,7 +126,7 @@ public class Run2Bots {
 		}
 		System.out.println(one.getName() + " won " + botOneWin + " games.");
 		System.out.println(two.getName() + " won " + botTwoWin + " games.");
-		System.out.println("There was "+ ties + " tie games.");
+		System.out.println("There was "+ ties + " tie game(s).");
 		System.out.println();
 
 		one.setStrategy(new BeginnerStrategy());
@@ -159,7 +163,7 @@ public class Run2Bots {
 
 		System.out.println(one.getName() + " won " + botOneWin + " games.");
 		System.out.println(two.getName() + " won " + botTwoWin + " games.");
-		System.out.println("There was "+ ties + " tie games.");
+		System.out.println("There was "+ ties + " tie game(s).");
 
 		one.setStrategy(new IntermediateStrategy());
 		two.setStrategy(new AdvancedStrategy());

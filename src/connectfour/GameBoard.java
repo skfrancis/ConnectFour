@@ -7,7 +7,7 @@ package connectfour;
  * @author Shawn Francis
  *
  */
-class GameBoard {
+public class GameBoard {
 
 	private static final int EMPTY = 0;
 	private static final int ROWS = 6;

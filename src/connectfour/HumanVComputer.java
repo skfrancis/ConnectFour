@@ -1,5 +1,7 @@
 package connectfour;
 
+import strategies.IntermediateStrategy;
+
 import java.util.Scanner;
 
 /**
@@ -17,7 +19,7 @@ public class HumanVComputer {
 	 */
 	public static void main(String[] args) {
 		GameBoard board = new GameBoard();
-		Player one = new Player("Human", 1);
+		Player one = new HumanPlayer("Human", 1);
 		ComputerPlayer two = new ComputerPlayer("Computer", 2, new IntermediateStrategy());
 
 		Scanner keyBoard = new Scanner(System.in);

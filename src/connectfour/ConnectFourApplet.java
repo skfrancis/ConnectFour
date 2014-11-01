@@ -1,5 +1,10 @@
 package connectfour;
 
+import strategies.AdvancedStrategy;
+import strategies.BeginnerStrategy;
+import strategies.ComputerStrategy;
+import strategies.IntermediateStrategy;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,7 +46,7 @@ public class ConnectFourApplet extends JApplet {
         difficultyMenuInit();
         computerOne = new BeginnerStrategy();
         computerTwo = new BeginnerStrategy();
-        playerOne = new Player("Human Red",1);
+        playerOne = new HumanPlayer("Human Red",1);
         playerTwo = new ComputerPlayer("Computer Blue",2, computerTwo);
         display.newGame(playerOne, playerTwo);
         display.startGame();
@@ -180,7 +185,7 @@ public class ConnectFourApplet extends JApplet {
         public void actionPerformed(ActionEvent event) {
             Object eventSource = event.getSource();
             if(eventSource == playerOneHuman){
-                playerOne = new Player("Human Red",1);
+                playerOne = new HumanPlayer("Human Red",1);
                 playerOneHuman.setSelected(true);
                 playerOneComputer.setSelected(false);
                 display.stopGame();
@@ -198,7 +203,7 @@ public class ConnectFourApplet extends JApplet {
 
             }
             if(eventSource == playerTwoHuman){
-                playerTwo = new Player("Human Blue",2);
+                playerTwo = new HumanPlayer("Human Blue",2);
                 playerTwoHuman.setSelected(true);
                 playerTwoComputer.setSelected(false);
                 display.stopGame();

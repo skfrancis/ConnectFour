@@ -1,5 +1,7 @@
 package connectfour;
 
+import strategies.ComputerStrategy;
+
 /**
  * This class extends the Player class to be able
  * to have a computer player with extra methods and
@@ -7,7 +9,9 @@ package connectfour;
  * @author Shawn Francis
  *
  */
-public class ComputerPlayer extends Player {
+public class ComputerPlayer implements Player {
+    private final String playerName;
+    private final int playerID;
 	private ComputerStrategy currentStrategy;
 
 	/**
@@ -19,20 +23,28 @@ public class ComputerPlayer extends Player {
 	 * @param strategy computer strategy
 	 */
 	public ComputerPlayer(String name, int id, ComputerStrategy strategy) {
-        super(name, id);
+        playerName = name;
+        playerID = id;
         currentStrategy = strategy;
     }
 
-	/**
-	 * This method changes the current stored
-	 * computer strategy to the passed strategy.
-	 * @param newStrategy computer strategy
-	 */
-	public void setStrategy(ComputerStrategy newStrategy){
-		currentStrategy = newStrategy;
-	}
+    /**
+     * This method returns the stored player name.
+     */
+    @Override
+    public String getName(){
+        return playerName;
+    }
 
-	@Override
+    /**
+     * This method returns the stored player id.
+     */
+    @Override
+    public int getID(){
+        return playerID;
+    }
+
+    @Override
 	public boolean makeMove(GameBoard board, int column){
 		column = currentStrategy.decideMove(board, getID());
 		if(board.isLegalPlay(column)){
@@ -42,4 +54,13 @@ public class ComputerPlayer extends Player {
 		else return false;
 	}
 
+    /**
+     * This method changes the current stored
+     * computer strategy to the passed strategy.
+     * @param newStrategy computer strategy
+     */
+    @Override
+    public void setStrategy(ComputerStrategy newStrategy) {
+        currentStrategy = newStrategy;
+    }
 }

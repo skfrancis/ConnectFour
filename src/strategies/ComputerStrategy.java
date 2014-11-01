@@ -1,4 +1,7 @@
-package connectfour;
+package strategies;
+
+import connectfour.GameBoard;
+
 /**
  * This interface is used to implement a
  * computer strategy for dropping checkers
@@ -6,7 +9,7 @@ package connectfour;
  * @author Shawn Francis
  *
  */
-interface ComputerStrategy {
+public interface ComputerStrategy {
 
 	/**
 	 * This method will return a decided move
